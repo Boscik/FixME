@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,6 +32,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
+    public float maxHeight = 0f;
+    public float maxFall = 15f;
+
     [Header("Input Actions")]
     public InputActionReference moveAction;
     public InputActionReference jumpAction;
@@ -48,6 +53,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(transform.position.y > maxHeight) {
+            maxHeight = transform.position.y;
+        }
+        if(transform.position.y < maxHeight - maxFall)
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+
         groundedPlayer = controller.isGrounded;
 
         if (groundedPlayer)

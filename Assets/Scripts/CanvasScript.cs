@@ -13,8 +13,9 @@ public class CanvasScript : MonoBehaviour
 
     public void Update()
     {
-        if (player.transform.position.y > maxHeight)
-            maxHeight = (int) player.transform.position.y;
+        float player_height = player.transform.position.y - 1.5f;
+        if (player_height > maxHeight)
+            maxHeight = (int) player_height;
         healthText.text = $"{maxHeight} m";
     }
 }

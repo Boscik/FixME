@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene Krystof.unity
     guid: 9b777c5bf1421364281746971ee47fa1
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: ccc57872965fc4049906e8490612c051
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
